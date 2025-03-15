@@ -25,8 +25,7 @@ Here is a screenshot from one of the output videos:
 Deep learning network for detecting tennis court
 
 It was developed a deep learning network to detect tennis court keypoints from broadcast videos. The proposed heatmap-based deep learning
-network allows to detect 14 points of tennis court. Postprocessing techniques (based on classical computer vision methods) were implemented to enhance 
-net predictions.
+network allows to detect 14 points of tennis court.
 
 ![](dataset_example.png)
 
