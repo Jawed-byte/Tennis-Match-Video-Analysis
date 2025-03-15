@@ -7,7 +7,7 @@ This Project **detects** the **tennis ball** as well as **tracks** the **players
 ## Output
 Here is a screenshot from one of the output videos:
 
-![Screenshot](screenshot.jpeg)
+![Screenshot](output_videos/screenshot.jpeg)
 
 ## Models Used
 * Used YOLOv8 for player detection.
@@ -20,6 +20,31 @@ Here is a screenshot from one of the output videos:
 ## Training
 * Tennis ball detetcor with YOLO: training/tennis_ball_detector_training.ipynb
 * Tennis court keypoint with Pytorch: training/tennis_court_keypoints_training.ipynb
+
+## TennisCourtDetector
+Deep learning network for detecting tennis court
+
+It was developed a deep learning network to detect tennis court keypoints from broadcast videos. The proposed heatmap-based deep learning
+network allows to detect 14 points of tennis court. Postprocessing techniques (based on classical computer vision methods) were implemented to enhance 
+net predictions.
+
+![](imgs/dataset_example.png)
+
+## Dataset
+The dataset consists of 8841 images, which were separeted to train set (75%) and validation set (25%). Each image has 14 annotated points. 
+The resolution of images is 1280×720. This dataset contains all court types (hard, clay, grass). Click the link 
+https://drive.google.com/file/d/1lhAaeQCmk2y440PmagA0KmIVBIysVMwu/view?usp=drive_link to download the dataset
+
+### Dataset collection
+This dataset was created in semi-automated way. Video highlights from different tournaments with length from 2 to 3 minutes were downloaded from YouTube. 
+Frames from video were extracted with step 50 frames to run them through classical computer vision algorithm. The quality of existing computer vision 
+algorithm is not good therefore the resulting images were filtered manually.    
+
+## Model architecture
+Proposed deep learning network is very similar to TrackNet architecture. 
+![](imgs/tracknet_arch.png) 
+<br> The difference is that input tensor consists of just 1 image (instead of 3 in TrackNet) and output tensor has 15 channels (14 from dataset and one additional
+point is center of tennis court). We used additional point for better convergence. The resolution of input and output image is 640x360.
 
 ## Complete Flow of the Project
 
@@ -98,8 +123,6 @@ Here is a screenshot from one of the output videos:
   - Give it in the format of README
 
   - This project implements automated tennis tracking using deep learning models to detect players, track ball movement, and analyze player performance efficiently.
-
-
 
 ## Requirements
 * python3.8
