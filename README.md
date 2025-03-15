@@ -39,12 +39,6 @@ This dataset was created in semi-automated way. Video highlights from different 
 Frames from video were extracted with step 50 frames to run them through classical computer vision algorithm. The quality of existing computer vision 
 algorithm is not good therefore the resulting images were filtered manually.    
 
-## Model architecture
-Proposed deep learning network is very similar to TrackNet architecture. 
-![](tracknet_arch.png) 
-<br> The difference is that input tensor consists of just 1 image (instead of 3 in TrackNet) and output tensor has 15 channels (14 from dataset and one additional
-point is center of tennis court). We used additional point for better convergence. The resolution of input and output image is 640x360.
-
 ## Complete Flow of the Project
 
 * **Model Training and Fine-tuning**
