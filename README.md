@@ -7,7 +7,7 @@ This Project **detects** the **tennis ball** as well as **tracks** the **players
 ## Output
 Here is a screenshot from one of the output videos:
 
-![Screenshot](output_videos/screenshot.jpeg)
+![Screenshot](screenshot.jpeg)
 
 ## Models Used
 * Used YOLOv8 for player detection.
